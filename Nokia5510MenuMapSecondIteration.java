@@ -1,8 +1,12 @@
 import java.util.Scanner;
-	public class Nokia5510MenuMap{
+	public class Nokia5510MenuMapSecondIteration{
 		public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
+		boolean repeat = true;
 
+int skipPrint = 0;
+
+while (repeat){
 String menuFunctions = """ 
 
 
@@ -31,17 +35,19 @@ Press
 
  """;
 
-
-
-System.out.println(menuFunctions);
-int menuChoice = input.nextInt();
-
+int menuChoice = 0;
+if(skipPrint == 0){
+	System.out.println(menuFunctions);
+	menuChoice = input.nextInt();
+} else {
+	menuChoice = skipPrint; }
 		
 	switch(menuChoice){
 	case 1 -> {
 
 String phonebookMenu = """
 
+--PHONEBOOK--
 Press
 
 1. Search
@@ -56,26 +62,50 @@ Press
 10. Speed dials
 11. Voice tags 
 
+0. Back
 
 """;
 
-
+		skipPrint = 0;
 		System.out.println(phonebookMenu);
 		int functionsUnderPhonebookMenu = input.nextInt();
 
 			switch(functionsUnderPhonebookMenu){
+			case 0 -> {break;}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+			case 3 -> {repeat = false;}
+			case 4 -> {repeat = false;}
+			case 5 -> {repeat = false;}
+			case 6 -> {repeat = false;}
+			case 7 -> {repeat = false;}
+			case 8 -> {repeat = false;}
+			case 10 -> {repeat = false;}
+			case 11 -> {repeat = false;}
+
 			case 9 -> {
 		String optionsMenu = """
 
+--OPTIONS--
 Press
 
 1. Memory in use
 2. Type of view
 3. Memory status  
 
+0. Back
 """;
 
 		System.out.println(optionsMenu);
+		int functionsUnderOptions = input.nextInt();
+
+			switch(functionsUnderOptions){
+			case 0 -> {skipPrint = 1;}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+			case 3 -> {repeat = false;}
+}
+
 
 		}
 	}
@@ -88,6 +118,7 @@ Press
 	case 2 -> {
 String messageMenu = """
 
+--MESSAGES--
 Press 
 
 1. Write messages
@@ -101,43 +132,73 @@ Press
 9. Voice mailbox number
 10. Serve command editor
 
-""";
+0. Back
 
+""";
+		skipPrint = 0;
 		System.out.println(messageMenu);
 		int functionsUnderMessageMenu = input.nextInt();
 
 			switch(functionsUnderMessageMenu){
+			case 0 -> {break;}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+			case 3 -> {repeat = false;}
+			case 4 -> {repeat = false;}
+			case 5 -> {repeat = false;}
+			case 6 -> {repeat = false;}
+			case 8 -> {repeat = false;}
+			case 9 -> {repeat = false;}
+			case 10 -> {repeat = false;}
+
 			case 7 -> {
 String messageSettingsMenu = """
 
+--MESSAGE SETTINGS--
 Press
 
 1. Set 1
 2. Common
 
+0. Back
 """;
 
 		System.out.println(messageSettingsMenu);
 		int optionsUnderMessageSettingsMenu = input.nextInt();
 
 			switch(optionsUnderMessageSettingsMenu){
+			case 0 -> {skipPrint = 2;}
 			case 1 -> {
 String optionsUnderSet1 = """
 
+--SET 1--
 Press
 
 1. Message centre number
 2. Messages sent as
 3. Message validity
 
+0. Back
+
 """;
 
+if (backOption == 0){
+System.out.println("")
 		System.out.println(optionsUnderSet1);
+		int functionsUnderSet1 = input.nextInt();
+
+			switch(functionsUnderSet1){
+			case 0 -> {}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+			case 3 -> {repeat = false;}
+}
 }
 
 			case 2 -> {
 String optionsUnderCommon = """
 
+--COMMON--
 Press
  
 1. Delivery reports
@@ -162,6 +223,7 @@ Press
 	case 4 -> {
 String callRegisterMenu = """
 
+--CALL REGISTER--
 Press
 
 1. Missed calls
@@ -182,6 +244,7 @@ Press
 			case 5 -> {
 String optionsUnderCallDuration = """
 
+--CALL DURATION--
 Press
 1. Last call duration
 2. All calls' duration
@@ -197,6 +260,7 @@ Press
 			case 6 -> {
 String optionsUnderCallCosts = """
 
+--CALL COSTS--
 Press
 1. Last call cost
 2. All calls' cost
@@ -211,6 +275,7 @@ Press
 			case 7 -> {
 String optionsUnderCallCostSettings = """
 
+--CALL COST SETTINGS--
 Press
 1. Call cost limit
 2. Show costs in
@@ -227,6 +292,7 @@ Press
 	case 5 -> {
 String tonesMenu = """
 
+--TONES--
 Press
 
 1. Ringing tone
@@ -246,6 +312,7 @@ Press
 	case 6 -> {
 String settingsMenu = """
 
+--SETTINGS--
 Press
 
 1. Call settings
@@ -262,6 +329,7 @@ Press
 			case 1 -> {
 String optionsUnderCallSettings = """
 
+--CALL SETTINGS--
 Press
 
 1. Automatic redial
@@ -280,6 +348,7 @@ Press
 			case 2 -> {
 String optionsUnderPhoneSettings = """
 
+--PHONE SETTINGS--
 Press
 
 1. Language
@@ -297,6 +366,7 @@ Press
 			case 3 -> {
 String optionsUnderSecuritySettings = """
 
+--SECURITY SETTINGS--
 Press
 
 1. PIN code request
@@ -319,6 +389,7 @@ Press
 	case 8 -> {
 String musicMenu = """
 
+--MUSIC--
 Press
 
 1. Music player
@@ -337,6 +408,7 @@ Press
 	case 12 -> {
 String clockMenu = """
 
+--CLOCK--
 Press
 
 1. Alarm clock
@@ -360,6 +432,7 @@ Press
 
 
 
+			}
 		}
 	}
 }
