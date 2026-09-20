@@ -4,8 +4,8 @@ import java.util.Scanner;
 		Scanner input = new Scanner(System.in);
 		boolean repeat = true;
 
-int skipPrint = 0;
-int backOption = 0;
+int skipLevel = 0;
+int skipNestedLevel = 0;
 
 while (repeat){
 String menuFunctions = """ 
@@ -37,11 +37,11 @@ Press
  """;
 
 int menuChoice = 0;
-if(skipPrint == 0){
+if(skipLevel == 0){
 	System.out.println(menuFunctions);
 	menuChoice = input.nextInt();
 } else {
-	menuChoice = skipPrint; }
+	menuChoice = skipLevel; }
 		
 	switch(menuChoice){
 	case 1 -> {
@@ -67,7 +67,7 @@ Press
 
 """;
 
-		skipPrint = 0;
+		skipLevel = 0;
 		System.out.println(phonebookMenu);
 		int functionsUnderPhonebookMenu = input.nextInt();
 
@@ -101,7 +101,7 @@ Press
 		int functionsUnderOptions = input.nextInt();
 
 			switch(functionsUnderOptions){
-			case 0 -> {skipPrint = 1;}
+			case 0 -> {skipLevel = 1;}
 			case 1 -> {repeat = false;}
 			case 2 -> {repeat = false;}
 			case 3 -> {repeat = false;}
@@ -136,13 +136,13 @@ Press
 0. Back
 
 """;
-		skipPrint = 0;
+		skipLevel = 0;
 int functionsUnderMessageMenu = 0;
-if (backOption == 0){
+if (skipNestedLevel == 0){
 	System.out.println(messageMenu);
 	functionsUnderMessageMenu = input.nextInt();
 } else {
-	functionsUnderMessageMenu = backOption;}
+	functionsUnderMessageMenu = skipNestedLevel;}
 			switch(functionsUnderMessageMenu){
 			case 0 -> {break;}
 			case 1 -> {repeat = false;}
@@ -166,12 +166,12 @@ Press
 
 0. Back
 """;
-		backOption = 0;
+		skipNestedLevel = 0;
 		System.out.println(messageSettingsMenu);
 		int optionsUnderMessageSettingsMenu = input.nextInt();
 
 			switch(optionsUnderMessageSettingsMenu){
-			case 0 -> {skipPrint = 2;}
+			case 0 -> {skipLevel = 2;}
 			case 1 -> {
 String optionsUnderSet1 = """
 
@@ -190,8 +190,8 @@ Press
 		int functionsUnderSet1 = input.nextInt();
 
 			switch(functionsUnderSet1){
-			case 0 -> {backOption = 7;
-				skipPrint = 2;}
+			case 0 -> {skipNestedLevel = 7;
+				skipLevel = 2;}
 			case 1 -> {repeat = false;}
 			case 2 -> {repeat = false;}
 			case 3 -> {repeat = false;}
@@ -215,8 +215,8 @@ Press
 		int functionsUnderCommon = input.nextInt();
 
 			switch(functionsUnderCommon){
-			case 0 -> {backOption = 7;
-				skipPrint = 2;}
+			case 0 -> {skipNestedLevel = 7;
+				skipLevel = 2;}
 			case 1 -> {repeat = false;}
 			case 2 -> {repeat = false;}
 			case 3 -> {repeat = false;}
@@ -254,7 +254,7 @@ Press
 0. Back
 
 """;
-		skipPrint = 0;
+		skipLevel = 0;
 		System.out.println(callRegisterMenu);
 		int functionsUnderCallRegisterMenu = input.nextInt();
 
@@ -286,7 +286,7 @@ Press
 		int functionsUnderCallDuration = input.nextInt();
 
 			switch(functionsUnderCallDuration){
-			case 0 -> {skipPrint = 4;}
+			case 0 -> {skipLevel = 4;}
 			case 1 -> {repeat = false;}
 			case 2 -> {repeat = false;}
 			case 3 -> {repeat = false;}
@@ -308,10 +308,11 @@ Press
 
 """;
 
-		System.out.println(optionsUnderCallCosts);			int functionsUnderCallCosts = input.nextInt();
+		System.out.println(optionsUnderCallCosts);			
+		int functionsUnderCallCosts = input.nextInt();
 
 			switch(functionsUnderCallCosts){
-			case 0 -> {skipPrint = 4;}
+			case 0 -> {skipLevel = 4;}
 			case 1 -> {repeat = false;}
 			case 2 -> {repeat = false;}
 			case 3 -> {repeat = false;}
@@ -331,10 +332,11 @@ Press
 
 """;
 
-		System.out.println(optionsUnderCallCostSettings);		int functionsUnderCallCostSettings = input.nextInt();
+		System.out.println(optionsUnderCallCostSettings);		
+		int functionsUnderCallCostSettings = input.nextInt();
 
 			switch(functionsUnderCallCostSettings){
-			case 0 -> {skipPrint = 4;}
+			case 0 -> {skipLevel = 4;}
 			case 1 -> {repeat = false;}
 			case 2 -> {repeat = false;}
 		}
@@ -392,12 +394,13 @@ Press
 
 0. Back
 """;
-		skipPrint = 0;
+		skipLevel = 0;
 		System.out.println(settingsMenu);	
 		int functionsUnderSettingsMenu = input.nextInt();
 
 			switch(functionsUnderSettingsMenu){
 				case 0 -> {break;}
+				case 4 -> {repeat = false;}
 				case 1 -> {
 String optionsUnderCallSettings = """
 
@@ -419,7 +422,7 @@ Press
 		int functionsUnderCallSettings = input.nextInt();
 
 			switch(functionsUnderCallSettings){
-				case 0 -> {skipPrint = 6;}
+				case 0 -> {skipLevel = 6;}
 				case 1 -> {repeat = false;}
 				case 2 -> {repeat = false;}
 				case 3 -> {repeat = false;}
@@ -451,7 +454,7 @@ Press
 		int functionsUnderPhoneSettings = input.nextInt();
 
 			switch(functionsUnderPhoneSettings){
-			case 0 -> {skipPrint = 6;}
+			case 0 -> {skipLevel = 6;}
 			case 1 -> {repeat = false;}
 			case 2 -> {repeat = false;}
 			case 3 -> {repeat = false;}
@@ -480,7 +483,7 @@ Press
 		int functionsUnderSecuritySettings = input.nextInt();
 
 			switch(functionsUnderSecuritySettings){
-			case 0 -> {skipPrint = 6;}
+			case 0 -> {skipLevel = 6;}
 			case 1 -> {repeat = false;}
 			case 2 -> {repeat = false;}
 			case 3 -> {repeat = false;}
