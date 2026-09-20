@@ -5,6 +5,7 @@ import java.util.Scanner;
 		boolean repeat = true;
 
 int skipPrint = 0;
+int backOption = 0;
 
 while (repeat){
 String menuFunctions = """ 
@@ -136,9 +137,12 @@ Press
 
 """;
 		skipPrint = 0;
-		System.out.println(messageMenu);
-		int functionsUnderMessageMenu = input.nextInt();
-
+int functionsUnderMessageMenu = 0;
+if (backOption == 0){
+	System.out.println(messageMenu);
+	functionsUnderMessageMenu = input.nextInt();
+} else {
+	functionsUnderMessageMenu = backOption;}
 			switch(functionsUnderMessageMenu){
 			case 0 -> {break;}
 			case 1 -> {repeat = false;}
@@ -162,7 +166,7 @@ Press
 
 0. Back
 """;
-
+		backOption = 0;
 		System.out.println(messageSettingsMenu);
 		int optionsUnderMessageSettingsMenu = input.nextInt();
 
@@ -182,13 +186,12 @@ Press
 
 """;
 
-if (backOption == 0){
-System.out.println("")
 		System.out.println(optionsUnderSet1);
 		int functionsUnderSet1 = input.nextInt();
 
 			switch(functionsUnderSet1){
-			case 0 -> {}
+			case 0 -> {backOption = 7;
+				skipPrint = 2;}
 			case 1 -> {repeat = false;}
 			case 2 -> {repeat = false;}
 			case 3 -> {repeat = false;}
@@ -205,9 +208,21 @@ Press
 2. Reply via same centre
 3. Character support
 
+0. Back
 """;
 
 		System.out.println(optionsUnderCommon);
+		int functionsUnderCommon = input.nextInt();
+
+			switch(functionsUnderCommon){
+			case 0 -> {backOption = 7;
+				skipPrint = 2;}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+			case 3 -> {repeat = false;}
+
+}
+
 
 }
 			}
@@ -217,7 +232,8 @@ Press
 }
 
 
-	case 3 -> {System.out.println("Welcome to Chat");}
+	case 3 -> {System.out.println("Welcome to Chat");
+			repeat = false;}
 
 
 	case 4 -> {
@@ -235,12 +251,22 @@ Press
 7. Call cost settings
 8. Prepaid credit
 
-""";
+0. Back
 
+""";
+		skipPrint = 0;
 		System.out.println(callRegisterMenu);
 		int functionsUnderCallRegisterMenu = input.nextInt();
 
 			switch(functionsUnderCallRegisterMenu){
+			case 0 -> {break;}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+			case 3 -> {repeat = false;}
+			case 4 -> {repeat = false;}
+			case 8 -> {repeat = false;}
+			
+
 			case 5 -> {
 String optionsUnderCallDuration = """
 
@@ -252,9 +278,21 @@ Press
 4. Dialled calls' duration
 5. Clear timers
 
+0. Back
+
 """;
 
-		System.out.println(optionsUnderCallDuration);		
+		System.out.println(optionsUnderCallDuration);
+		int functionsUnderCallDuration = input.nextInt();
+
+			switch(functionsUnderCallDuration){
+			case 0 -> {skipPrint = 4;}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+			case 3 -> {repeat = false;}
+			case 4 -> {repeat = false;}
+			case 5 -> {repeat = false;}
+}
 }
 
 			case 6 -> {
@@ -266,9 +304,18 @@ Press
 2. All calls' cost
 3. Clear counters
 
+0. Back
+
 """;
 
-		System.out.println(optionsUnderCallCosts);		
+		System.out.println(optionsUnderCallCosts);			int functionsUnderCallCosts = input.nextInt();
+
+			switch(functionsUnderCallCosts){
+			case 0 -> {skipPrint = 4;}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+			case 3 -> {repeat = false;}
+	}
 
 }
 
@@ -280,9 +327,17 @@ Press
 1. Call cost limit
 2. Show costs in
 
+0. Back
+
 """;
 
-		System.out.println(optionsUnderCallCostSettings);		
+		System.out.println(optionsUnderCallCostSettings);		int functionsUnderCallCostSettings = input.nextInt();
+
+			switch(functionsUnderCallCostSettings){
+			case 0 -> {skipPrint = 4;}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+		}
 
 }	
 	}
@@ -304,9 +359,24 @@ Press
 7. Vibrating alert
 8. Screen saver
 
+0. Back
+
 """;
 
 		System.out.println(tonesMenu);	
+		int optionsUnderTones = input.nextInt();
+
+			switch(optionsUnderTones){
+			case 0 -> {break;}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+			case 3 -> {repeat = false;}
+			case 4 -> {repeat = false;}
+			case 5 -> {repeat = false;}
+			case 6 -> {repeat = false;}
+			case 7 -> {repeat = false;}
+			case 8 -> {repeat = false;}
+}
 
 }
 	case 6 -> {
@@ -320,13 +390,15 @@ Press
 3. Security settings
 4. Restore factory settings
 
+0. Back
 """;
-
+		skipPrint = 0;
 		System.out.println(settingsMenu);	
 		int functionsUnderSettingsMenu = input.nextInt();
 
 			switch(functionsUnderSettingsMenu){
-			case 1 -> {
+				case 0 -> {break;}
+				case 1 -> {
 String optionsUnderCallSettings = """
 
 --CALL SETTINGS--
@@ -339,9 +411,23 @@ Press
 5. Phone line in use
 6. Automatic answer
 
+0. Back
+
 """;
 
-		System.out.println(optionsUnderCallSettings);	
+		System.out.println(optionsUnderCallSettings);
+		int functionsUnderCallSettings = input.nextInt();
+
+			switch(functionsUnderCallSettings){
+				case 0 -> {skipPrint = 6;}
+				case 1 -> {repeat = false;}
+				case 2 -> {repeat = false;}
+				case 3 -> {repeat = false;}
+				case 4 -> {repeat = false;}
+				case 5 -> {repeat = false;}
+				case 6 -> {repeat = false;}
+}
+			
 
 }
 
@@ -357,10 +443,21 @@ Press
 4. Network selection
 5. Confirm SIM service actions
 
+0. Back
+
 """;
 
 		System.out.println(optionsUnderPhoneSettings);	
+		int functionsUnderPhoneSettings = input.nextInt();
 
+			switch(functionsUnderPhoneSettings){
+			case 0 -> {skipPrint = 6;}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+			case 3 -> {repeat = false;}
+			case 4 -> {repeat = false;}
+			case 5 -> {repeat = false;}
+}
 }
 
 			case 3 -> {
@@ -376,16 +473,29 @@ Press
 5. Security level
 6. Change access codes
 
+0. Back
 """;
 
 		System.out.println(optionsUnderSecuritySettings);	
+		int functionsUnderSecuritySettings = input.nextInt();
+
+			switch(functionsUnderSecuritySettings){
+			case 0 -> {skipPrint = 6;}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+			case 3 -> {repeat = false;}
+			case 4 -> {repeat = false;}
+			case 5 -> {repeat = false;}
+			case 6 -> {repeat = false;}
+}
 
 }
 
 	}
 
 }
-	case 7 -> {System.out.println("Welcome to Call divert");}
+	case 7 -> {System.out.println("Welcome to Call divert");
+			repeat = false;}
 	case 8 -> {
 String musicMenu = """
 
@@ -397,14 +507,29 @@ Press
 3. Recorder
 4. Track list
 
-""";
+0. Back
 
+""";
+	
 		System.out.println(musicMenu);	
+		int optionsUnderMusic = input.nextInt();
+
+			switch(optionsUnderMusic){
+			case 0 -> {break;}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+			case 3 -> {repeat = false;}
+			case 4 -> {repeat = false;}
 
 }
-	case 9 -> {System.out.println("Welcome to Games");}
-	case 10 -> {System.out.println("Welcome to Calculator");}
-	case 11 -> {System.out.println("Welcome to Reminders");}
+
+}
+	case 9 -> {System.out.println("Welcome to Games");
+			repeat = false;}
+	case 10 -> {System.out.println("Welcome to Calculator");
+			repeat = false;}
+	case 11 -> {System.out.println("Welcome to Reminders");
+			repeat = false;}
 	case 12 -> {
 String clockMenu = """
 
@@ -418,14 +543,29 @@ Press
 5. Countdown timer
 6. Auto update of date and time
 
+0. Back
+
 """;
-
+	
 		System.out.println(clockMenu);	
+		int optionsUnderClock = input.nextInt();
 
+			switch(optionsUnderClock){
+			case 0 -> {break;}
+			case 1 -> {repeat = false;}
+			case 2 -> {repeat = false;}
+			case 3 -> {repeat = false;}
+			case 4 -> {repeat = false;}
+			case 5 -> {repeat = false;}
+			case 6-> {repeat = false;}
 }
-	case 13 -> {System.out.println("Welcome to Profiles");}
-	case 14 -> {System.out.println("Welcome to Services");}
-	case 15 -> {System.out.println("Welcome to SIM Services");}
+}
+	case 13 -> {System.out.println("Welcome to Profiles");
+			repeat = false;}
+	case 14 -> {System.out.println("Welcome to Services");
+			repeat = false;}
+	case 15 -> {System.out.println("Welcome to SIM Services");
+			repeat = false;}
 
 
 
