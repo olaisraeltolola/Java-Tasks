@@ -1,0 +1,67 @@
+4. A sequence statement is the order of execution of a code which is from top to bottom. A real-life example of a sequence of instructions is going to work. The order of executing the instructions before getting to work must be done sequentially to get good results.
+
+5. 16
+
+9. firstNumber = 8
+   secondNumber = 24
+   thirdNumber = 10
+
+11. Syntax error
+The code will not compile because total was not declared or initialized before being used in a print statement.
+
+14. Declaring a variable is making it known to java that a variable exists or has been created while initializing a variable is assigning the first value to the newly created variable. Initialization is the first assignment. Example:
+	Variable Declaration: int number;
+	Variable initialization: number = 10;
+
+17. Java has 4 letters.
+
+19. It would cause a syntax error
+The error seen would be that the variable might not have been initialized.
+
+24. An if/else statement has two options to be executed but executes only one depending on the condition, while an if/else if/else chain has multiple options but executes only the one that suits the condition. The if/else is for picking between two options, while the if/else if/else chain is for picking among multiple options.
+
+25. Medium
+
+28. An if statement contains conditions but the statement "x = 10" is an assignment statement. To correct this, change the "x = 10" in the if statement to "x == 10"
+
+32. B wins
+
+34. == is used to compare integers or numerical values while .equals() is used to compare strings. Example of an incorrect value produced by using == wrongly: if (username == "admin")
+			System.out.println("You are correct") 
+
+37. Short circuit evaluation is when a logical operator stops evaluating conditions once the first condition can determine the outcome. The && operator prevents runtime error because it doesn't check the second condition if the first condition is true. If the second condition is risky and may give a runtime error, then you place the less risky code on the left . An example of the && logical operator: age = 25
+	if (age >30 && name == "Lola")
+		System.out.print("Hi")
+
+39. Grade: C
+
+41. A dangling else problem is when there is an else statement without a prior if statement or when you write a block of code to separate the if and else statements. Example:
+
+Dangling else
+if (number % 2 == 0)
+System.out.println("The number is divisible by 2");
+counter++;
+
+else 
+System.out.println("The number is not divisible by 2");
+
+Fixed with braces
+if (number % 2 == 0){
+System.out.println("The number is divisible by 2");
+counter++;
+
+} else 
+System.out.println("The number is not divisible by 2");
+
+
+
+
+
+
+
+
+
+
+
+
+
