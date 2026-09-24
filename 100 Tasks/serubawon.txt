@@ -53,6 +53,43 @@ counter++;
 } else 
 System.out.println("The number is not divisible by 2");
 
+44. If/else if/else chain chooses only one option out of many. If the first condition is true, then it skips the rest and only performs the block of code in that condition. An if statement checks all the conditions, so if 2 conditions are true but you only need one to be true at a time, an if statement would perform the blocks of code in both conditions that are true.
+
+49. A do while loop performs what is in its body first before checking the condition. A while loop checks the condition before performing anything in its body. 
+
+
+51. 1
+    4
+    9
+    16
+    25
+
+53. An infinite loop is a loop whose condition never becomes false and thus always keeps running. An example is:
+
+int count = 0;
+if (count <= 5)
+System.out.print(count);
+
+This loop keeps running because there is no increment to make the condition eventually become false. Thus putting an increment or a sentinel value to make a condition eventually false fixes an infinite loop. 
+
+
+56. count = 6
+
+59. Break in a loop completely terminates the loop from that point down while continue stops the loop at where the condition above it is true, skips the rest of the body below it and starts the loop again from the next value. 
+
+62. A sentinel value is a control value assigned to a variable which should make the condition for a loop false or break the loop.
+
+64. 1 
+    1 2
+    1 2 3
+
+67. A loop variable is a variable which is used to track how many times a loop repeats. If you forget to update it, you will have an infinite loop.
+
+69. Initialization is assigning the first value to the loop variable, it is where the loop would start counting from. The condition is what the loop variable must meet for it to be true and for the loop to run. The update is what increases or decreases the value of the loop variable so that the condition can eventually become false. If the condition is always true, an infinite loop would be created and if the condition is false from the start, the loop would not run.
+
+
+
+
 
 
 
