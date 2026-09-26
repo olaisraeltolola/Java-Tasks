@@ -87,6 +87,124 @@ This loop keeps running because there is no increment to make the condition even
 
 69. Initialization is assigning the first value to the loop variable, it is where the loop would start counting from. The condition is what the loop variable must meet for it to be true and for the loop to run. The update is what increases or decreases the value of the loop variable so that the condition can eventually become false. If the condition is always true, an infinite loop would be created and if the condition is false from the start, the loop would not run.
 
+72. 1 is odd
+    2 is even
+    3 is odd
+    4 is even
+    5 is odd
+
+
+75. Sequence reads the code from top to bottom, so if the first if statement is true then it doesn't bother reading the rest. Selection is the use of if/else statements to provide options from which one will be true or for the grade to have a particular criteria it falls under. Iteration enables that you don't have to write a code for inputting the grade of each student.
+
+
+78.  0 + 1 = 1
+     1 + 3 = 4
+     Total: 4
+
+81. while/for loops test their condition to see if they are true before they perform what is in their body, while a do-while loop first performs the code in its body at least once before testing if the condition is true. A do-while loop can be used when you have a menu choice that you want the user to be able to pick from. Regardless of whether the condition is true or not, you want the user to be able to see the menu at least once. 
+
+84. * * *
+    * *
+    *
+
+87. Syntax error is an error that occurs when your code breaks the grammatical rules of the programming language. Your code does not compile when you have syntax errors. e.g Using a variable before it is declared.
+
+Logic error is an error that occurs when the program is running. The program runs without crashing but the answer it produces will not be your desired answer.
+
+Runtime error is an error that occurs when your code compiles but cannot run maybe due to a task that the computer cannot do. e.g When you divide a number by zero. 
+
+90. for loop
+for (int counter = 1; counter <= 10; counter++){
+System.out.println(counter);
+}
+This loops the code in the body of the for loop 10 times
+
+while loop
+int counter = 1;
+while (counter <= 10){
+System.out.println(counter);
+counter++;
+}
+This loops the code in the body of the while loop until the condition becomes false
+
+do-while loop
+int counter = 1;
+do{
+System.out.println(counter);
+counter++;
+} while (counter <= 10);
+This loop prints 1 before checking if the remaining counter is true and printing them.
+
+The most readable form is the for loop because it is a counter controlled iteration and we know how many numbers we want to print, thus we know how many times to iterate.
+
+91. I used a while loop because a sentinel value is used to terminate the loop, and a while loop is a sentinel-controlled loop.
+
+92. A loop invariant is a condition or fact that remains true before iteration of the loop and after iteration of the loop.
+
+int sum = 0;
+int index = 1;
+while (index <= 10){
+sum += index;
+index++;
+}
+System.out.println(sum);
+
+the loop variant here can be the sum which holds the sum of values processed.
+
+
+94. Added: 2
+    Added: 4
+    Added: 6
+    Added: 8
+    Added: 10
+
+    Sum: 30
+
+int sum = 0;
+for (int n = 1; n <= 10; n++){
+if (n % 2 == 0){
+sum += n;
+System.out.println("Added: " + n);
+}
+}
+System.out.println("Sum: " + sum);
+
+
+96. A counted loop is a counter controlled loop which means that you know how many iterations that the loop is going to perform while a conditional loop is a sentinel loop which means you don't know how many iterations the loop is going to perform but you have a condition that would terminate the loop once it becomes false.
+
+98. Loop control flow is the way iterative statements control the flow of the blocks of code in their body.
+
+Break is to immediately terminate a loop
+for (int index = 1; index <= 20; index++){
+if (number == 10)
+break;
+}
+
+Continue is to stop the loop from executing the rest of its code when a condition is met, then start the loop again 
+for (int index = 1; index <= 20; index++){
+if (number == 10)
+continue;
+}
+
+A flag variable is a Boolean condition that terminates the loop when it becomes false
+Boolean repeat = true;
+while (repeat){
+if (number == 2)
+repeat = false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
