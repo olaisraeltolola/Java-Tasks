@@ -85,13 +85,35 @@ else
 }
 
 
-	public static int divide (int numberOne, int numberTwo){
+	public static float divide (float numberOne, float numberTwo){
 
 		if (numberTwo == 0)
 			return 0;
 		else
 			return numberOne / numberTwo;
 
+}
+
+
+	public static int factorOf (int number){
+
+int count = 0;
+
+	for (int index = 1; index <= number; index ++){
+		if (number % index == 0)
+		count++;
+}
+	return count;
+}
+
+
+	public static boolean isPerfectSquare (int number){
+
+		if (number % (Math.sqrt(number)) == 0)
+		return true;
+
+		else 
+		return false;
 }
 
 }

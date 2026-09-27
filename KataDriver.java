@@ -10,7 +10,11 @@ public class KataDriver{
 
 	System.out.println(Kata.subtract(5,7));
 
-	System.out.println(Kata.divide(0,8));
+	System.out.println(Kata.divide(14,8));
+
+	System.out.println(Kata.factorOf(12));
+
+	System.out.println(Kata.isPerfectSquare(49));
 
 }
 }
