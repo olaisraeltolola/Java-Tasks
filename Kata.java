@@ -116,5 +116,33 @@ int count = 0;
 		return false;
 }
 
+	public static boolean isPalindrome (int number){
+
+int firstDigit = number / 10000;
+int secondDigit = (number / 1000) % 10;
+int fourthDigit = (number / 10) % 10;
+int fifthDigit = number % 10;
+if (firstDigit == fifthDigit && secondDigit == fourthDigit)
+	return true;
+
+else 
+	return false;
+}
+
+	public static long factorialOf(int number){
+
+long product = 1; 
+
+for (int index = number; index >= 1; index--){
+product = product * index;
+}
+return product;
+}
+
+	public static long squareOf(int number){
+
+return number*number;
+}
+
 }
 			

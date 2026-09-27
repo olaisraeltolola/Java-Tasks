@@ -16,5 +16,11 @@ public class KataDriver{
 
 	System.out.println(Kata.isPerfectSquare(49));
 
+	System.out.println(Kata.isPalindrome(11611));
+
+	System.out.println(Kata.factorialOf(5));
+
+	System.out.println(Kata.squareOf(-5));
+
 }
 }
