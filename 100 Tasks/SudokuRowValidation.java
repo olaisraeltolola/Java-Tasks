@@ -3,28 +3,27 @@ public class SudokuRowValidation{
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 
-int number = 0;
-int valid = 0;
+int[][] sudokuArray = new int[9][9];
 
-for (int index = 1; index <= 9; index++){
-	for(int counter = 1; index <= 9; index++){
+for (int row = 0; row < 9; row++){
 
-		System.out.println("Enter a number for your Sudoku row");
-		number = input.nextInt();
+	for (int column = 0; column < 9; column++){
 
-		if ( number <= 9 && number >= 1)
-		valid++;
+System.out.println("Enter a number between 1 and 9")
+int number = input.nextInt();
+
+sudokuArray[row][column] = number; 
+
+}
 
 }
 
-if (valid == 9)
-System.out.println("Valid row");
+for (int row = 0; row < 9; row++){
 
-else
-System.out.println("Number not in range of 1 and 9");
+	for (int column = 0; column < 9; column++){
+
+System.out.println(sudokuArray[row][column] )
+
 }
 
 }
-}
-
-
