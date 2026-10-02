@@ -4,20 +4,20 @@ import java.util.Scanner;
 		Scanner input = new Scanner(System.in);
 
 System.out.println("Enter the first number");
-int numberOne = input.nextInt();10
+int numberOne = input.nextInt();
 
 System.out.println("Enter the second number");
-int numberTwo = input.nextInt();20
+int numberTwo = input.nextInt();
 
-System.out.println("Before value: Number one = " + numberOne);
-System.out.println("Before value: Number two = " + numberTwo);
+System.out.println("Before value: First number = " + numberOne);
+System.out.println("Before value: Second number = " + numberTwo);
 
 numberOne = numberOne * numberTwo;
 numberTwo = numberOne / numberTwo;
 numberOne = numberOne / numberTwo; 
 
-System.out.println("After value: Number one = " + numberOne);
-System.out.println("After value: Number two = " + numberTwo);
+System.out.println("After value: First number = " + numberOne);
+System.out.println("After value: Second number = " + numberTwo);
 
 }
 }

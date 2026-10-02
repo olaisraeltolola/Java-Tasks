@@ -1,0 +1,6 @@
+create an array called numbers and input the numbers you want to arrange
+create another array and make it empty
+if the second item in the array is greater than the first item, switch their index positions
+check using this condition for subsequent items in the array 
+when the items in the array are ordered, loop through the index of the array and print out the array.
+

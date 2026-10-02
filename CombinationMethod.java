@@ -1,6 +1,6 @@
 public class CombinationMethod{
 
-public static int factorial(int number) {
+public int factorial(int number) {
 
 int factorial = 1;
 
@@ -11,7 +11,7 @@ return factorial;
 
 }
 
-public static double combination(int numberOne, int numberTwo){
+public double combination(int numberOne, int numberTwo){
 
 double combination = factorial(numberOne)/(factorial(numberOne - numberTwo) * factorial(numberTwo));
 
