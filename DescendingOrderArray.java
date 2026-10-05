@@ -1,24 +1,22 @@
 public class DescendingOrderArray{
 
-	public static int sortThis(int[] array){
+	public static int[] sortThis(int[] array){
 
-int[] array = new int[]
+		for (int arrayRow = 0; arrayRow < array.length; arrayRow++){
+			for (int index = arrayRow + 1; index < array.length; index++){
 
-for (int arrayRow = 0; arrayRow < array.length; arrayRow++){
-for (int index = 0; index < array.length; index++){
+				if (array[arrayRow] < array[index]){
 
-if (array[arrayRow] > array[index]){
-array[index] = array[arrayRow];
+					int temporaryVariable = array[arrayRow];
+					array[arrayRow] = array[index];
+					array[index] = temporaryVariable;
 
-} 
+				}
+			}
 
-}
-
-for (int index = 0; index < array.length; index++){
-return array[index]; 
-}
-
-}
+		}
+		return array;
+	}
 
 
 }
