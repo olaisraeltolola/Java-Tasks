@@ -1,64 +1,86 @@
 import java.util.Scanner;
-	public class TicTacToeArray{
-		public static void main(String[] args){
-		Scanner input = new Scanner(System.in);
+public class TicTacToeArray{
 
-char[][] ticTacToeArray = {{'1','2','3'},{'4','5','6'},{'7','8','9'}};
+	public static void main(String[] args){
+	Scanner input = new Scanner(System.in);
 
-for (int row = 0; row < 3; row++){
-	for (int column = 0; column < 3; column++){
+		String gameMenu = """
 
-if ((row == 0 && column == 1) || (row == 1 && column == 0) || (row == 1 && column == 2) || (row == 2 && column == 1)){
-	System.out.println("Player O, select a position (1-9):");
-	char position = input.next().charAt(0); 
+Please choose an option:
 
-switch(position){
-case '1' -> {ticTacToeArray[0][0] = 'O';}
-case '2' -> {ticTacToeArray[0][1] = 'O';}
-case '3' -> {ticTacToeArray[0][2] = 'O';}
-case '4' -> {ticTacToeArray[1][0] = 'O';}
-case '5' -> {ticTacToeArray[1][1] = 'O';}
-case '6' -> {ticTacToeArray[1][2] = 'O';}
-case '7' -> {ticTacToeArray[2][0] = 'O';}
-case '8' -> {ticTacToeArray[2][1] = 'O';}
-case '9' -> {ticTacToeArray[2][2] = 'O';}
-}
+1. Play TicTacToe game
+2. Exit
 
-for (int arrayRow = 0; arrayRow < 3; arrayRow++){
-	for (int arrayColumn = 0; arrayColumn < 3; arrayColumn++){
-		System.out.print(ticTacToeArray[arrayRow][arrayColumn] + " ");
-}
-System.out.println();
-}
+""";
 
-} else { 
-	System.out.println("Player X, select a position (1-9):");
-	char position = input.next().charAt(0); 
+String choice = "";
+boolean repeat = true;
 
-switch(position){
-case '1' -> {ticTacToeArray[0][0] = 'X';}
-case '2' -> {ticTacToeArray[0][1] = 'X';}
-case '3' -> {ticTacToeArray[0][2] = 'X';}
-case '4' -> {ticTacToeArray[1][0] = 'X';}
-case '5' -> {ticTacToeArray[1][1] = 'X';}
-case '6' -> {ticTacToeArray[1][2] = 'X';}
-case '7' -> {ticTacToeArray[2][0] = 'X';}
-case '8' -> {ticTacToeArray[2][1] = 'X';}
-case '9' -> {ticTacToeArray[2][2] = 'X';}
-}
+		while (repeat){
 
-for (int arrayRow = 0; arrayRow < 3; arrayRow++){
-	for (int arrayColumn = 0; arrayColumn < 3; arrayColumn++){
-		System.out.print(ticTacToeArray[arrayRow][arrayColumn] + " ");
-}
-System.out.println();
-}
-}
-
+		System.out.println(gameMenu);
+		choice = input.next();
+			switch(choice){
+				case "1" -> { play_game(); }
+				case "2" -> {repeat = false;}
+		
 			}
-
 		}
 
+	}
+
+
+	public static void play_game(){
+	Scanner input = new Scanner(System.in);
+
+		String response = "yes";
+
+		while (response.equalsIgnoreCase("yes")){
+
+			TicTacToeArrayFunctions.resetBoard();
+			TicTacToeArrayFunctions.boardDisplay();
+
+			for (int playerTries = 1; playerTries <= 9; playerTries++){
+
+				if (playerTries % 2 == 0){
+
+					char position = TicTacToeArrayFunctions.position(input, 'O');
+
+					TicTacToeArrayFunctions.playMove('O',position);
+	
+					TicTacToeArrayFunctions.boardDisplay();
+
+					if (TicTacToeArrayFunctions.detectWinner('O') == true){
+						System.out.println("Player O wins!");
+						break;
+					}
+
+
+				} else { 
+					char position = TicTacToeArrayFunctions.position(input, 'X');
+
+					TicTacToeArrayFunctions.playMove('X',position);
+
+					TicTacToeArrayFunctions.boardDisplay();
+
+					if (TicTacToeArrayFunctions.detectWinner('X') == true){
+						System.out.println("Player X wins!");
+						break;
+					}
+
+				}
+
+
+			}
+			if (TicTacToeArrayFunctions.detectWinner('X') == false && TicTacToeArrayFunctions.detectWinner('O') == false){
+
+				System.out.println("You have tie!");
+
+			}
+			System.out.println("Would you like to play again? (yes/no)");
+			response = input.next();
+
+		}
 	}
 	
 }

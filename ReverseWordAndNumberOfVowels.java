@@ -12,6 +12,7 @@ public class ReverseWordAndNumberOfVowels{
 	int counter = 0;
 	int count = 0;
 	int secondCount = 0;
+	int sum = 0;
 
 	String reverseWord = "";
 
@@ -52,10 +53,11 @@ public class ReverseWordAndNumberOfVowels{
 	secondCount++;
 }
 }
-	if (secondCount == 0)
+	if (secondCount == 0){
 	
 	System.out.print(index + " ");
-
+	sum += index;
+}
 }
 
 	if (count == 0)
@@ -64,6 +66,7 @@ public class ReverseWordAndNumberOfVowels{
 	System.out.println();
 	System.out.println("Reversed word = " + reverseWord);
 	System.out.println("The number of vowels = " + counter);
+	System.out.println("Sum of indexes = " + sum);
 
 
 }
