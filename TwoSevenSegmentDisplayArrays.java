@@ -39,7 +39,9 @@ public class TwoSevenSegmentDisplayArrays{
 		char firstSingleDecimal = TwoSevenSegmentDisplayArraysFunction.convertToSingleHex(firstDecimal);
 		char secondSingleDecimal = TwoSevenSegmentDisplayArraysFunction.convertToSingleHex(secondDecimal);
 
-		TwoSevenSegmentDisplayArraysFunction.displayHex(firstSingleDecimal, secondSingleDecimal, displayFirstArray, displaySecondArray);
+		TwoSevenSegmentDisplayArraysFunction.displayHex(firstSingleDecimal, displayFirstArray);
+		TwoSevenSegmentDisplayArraysFunction.displayHex(secondSingleDecimal, displaySecondArray);
+		TwoSevenSegmentDisplayArraysFunction.displayHexadecimal(displayFirstArray,displaySecondArray);
 
 
 

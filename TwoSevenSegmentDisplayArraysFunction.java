@@ -62,13 +62,65 @@ public class TwoSevenSegmentDisplayArraysFunction{
 		return hexMap[numberToConvert];
 	}
 
-	public static void displayHex(char firstConvertedNumber, char secondConvertedNumber, char[][] displayFirstArray, char[][] displaySecondArray){
-		if (firstConvertedNumber == '1' && secondConvertedNumber == '1'){
-			displayHexadecimal(displayOne(displayFirstArray), displayOne(displaySecondArray));
+
+
+	public static void displayHex(char convertedNumber, char[][] displayArray){
+
+
+		if (convertedNumber == '0'){
+			displayOne(displayArray);
+
+		} else 	if (convertedNumber == '1'){
+			displayOne(displayArray);
+
+		} else 	if (convertedNumber == '2'){
+			displayTwo(displayArray);
+
+		} else 	if (convertedNumber == '3'){
+			displayThree(displayArray);
+
+		} else 	if (convertedNumber == '4'){
+			displayFour(displayArray);
+
+		} else 	if (convertedNumber == '5'){
+			displayFive(displayArray);
+
+		} else 	if (convertedNumber == '6'){
+			displaySix(displayArray);
+
+		} else 	if (convertedNumber == '7'){
+			displaySeven(displayArray);
+
+		} else 	if (convertedNumber == '8'){
+			displayEight(displayArray);
+
+		} else 	if (convertedNumber == '9'){
+			displayNine(displayArray);
+
+		} else 	if (convertedNumber == 'A'){
+			displayA(displayArray);
+
+		} else 	if (convertedNumber == 'B'){
+			displayB(displayArray);
+
+		} else 	if (convertedNumber == 'C'){
+			displayC(displayArray);
+
+		} else 	if (convertedNumber == 'D'){
+			displayD(displayArray);
+
+		} else 	if (convertedNumber == 'E'){
+			displayE(displayArray);
+
+		} else 	if (convertedNumber == 'F'){
+			displayF(displayArray);
+
 		}
+
+
 	}
 
-	public static void displayZero(char[][] displayArray){
+	public static char[][] displayZero(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displayFirstSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySecondSegment(displayArray);
@@ -77,17 +129,21 @@ public class TwoSevenSegmentDisplayArraysFunction{
 		SevenSegmentDisplayArraysFunction.displayFifthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySixthSegment(displayArray);
 
+		return displayArray;
+
 
 	}
 
-	public static void displayOne(char[][] displayArray){
+	public static char[][] displayOne(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displaySecondSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displayThirdSegment(displayArray);
 
+		return displayArray;
+
 	}
 
-	public static void displayTwo(char[][] displayArray){
+	public static char[][] displayTwo(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displayFirstSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySecondSegment(displayArray);
@@ -95,9 +151,11 @@ public class TwoSevenSegmentDisplayArraysFunction{
 		SevenSegmentDisplayArraysFunction.displayFifthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySeventhSegment(displayArray);
 
+		return displayArray;
+
 	}
 
-	public static void displayThree(char[][] displayArray){
+	public static char[][] displayThree(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displayFirstSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySecondSegment(displayArray);
@@ -105,20 +163,23 @@ public class TwoSevenSegmentDisplayArraysFunction{
 		SevenSegmentDisplayArraysFunction.displayFourthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySeventhSegment(displayArray);
 
+		return displayArray;
+
 	}
 
 
-	public static void displayFour(char[][] displayArray){
+	public static char[][] displayFour(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displaySecondSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displayThirdSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySixthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySeventhSegment(displayArray);
 
+		return displayArray;
 
 	}
 
-	public static void displayFive(char[][] displayArray){
+	public static char[][] displayFive(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displayFirstSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displayThirdSegment(displayArray);
@@ -126,12 +187,12 @@ public class TwoSevenSegmentDisplayArraysFunction{
 		SevenSegmentDisplayArraysFunction.displaySixthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySeventhSegment(displayArray);
 
-
+		return displayArray;
 
 	}
 
 
-	public static void displaySix(char[][] displayArray){
+	public static char[][] displaySix(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displayFirstSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displayThirdSegment(displayArray);
@@ -140,20 +201,23 @@ public class TwoSevenSegmentDisplayArraysFunction{
 		SevenSegmentDisplayArraysFunction.displaySixthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySeventhSegment(displayArray);
 
-
+		return displayArray;
 
 	}
 
 
-	public static void displaySeven(char[][] displayArray){
+	public static char[][] displaySeven(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displayFirstSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySecondSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displayThirdSegment(displayArray);
+
+		return displayArray;
+
 	}
 
 
-	public static void displayEight(char[][] displayArray){
+	public static char[][] displayEight(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displayFirstSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySecondSegment(displayArray);
@@ -163,10 +227,12 @@ public class TwoSevenSegmentDisplayArraysFunction{
 		SevenSegmentDisplayArraysFunction.displaySixthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySeventhSegment(displayArray);
 
+		return displayArray;
+
 	}
 
 
-	public static void displayNine(char[][] displayArray){
+	public static char[][] displayNine(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displayFirstSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySecondSegment(displayArray);
@@ -174,10 +240,12 @@ public class TwoSevenSegmentDisplayArraysFunction{
 		SevenSegmentDisplayArraysFunction.displaySixthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySeventhSegment(displayArray);
 
+		return displayArray;
+
 	}
 
 
-	public static void displayA(char[][] displayArray){
+	public static char[][] displayA(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displayFirstSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySecondSegment(displayArray);
@@ -186,9 +254,12 @@ public class TwoSevenSegmentDisplayArraysFunction{
 		SevenSegmentDisplayArraysFunction.displaySixthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySeventhSegment(displayArray);
 
+		return displayArray;
+
+
 	}
 
-	public static void displayB(char[][] displayArray){
+	public static char[][] displayB(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displayThirdSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displayFourthSegment(displayArray);
@@ -196,18 +267,22 @@ public class TwoSevenSegmentDisplayArraysFunction{
 		SevenSegmentDisplayArraysFunction.displaySixthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySeventhSegment(displayArray);
 
+		return displayArray;
+
 	}
 
-	public static void displayC(char[][] displayArray){
+	public static char[][] displayC(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displayFirstSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displayFourthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displayFifthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySixthSegment(displayArray);
 
+		return displayArray;
+
 	}
 
-	public static void displayD(char[][] displayArray){
+	public static char[][] displayD(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displaySecondSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displayThirdSegment(displayArray);
@@ -215,9 +290,11 @@ public class TwoSevenSegmentDisplayArraysFunction{
 		SevenSegmentDisplayArraysFunction.displayFifthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySeventhSegment(displayArray);
 
+		return displayArray;
+
 	}
 
-	public static void displayE(char[][] displayArray){
+	public static char[][] displayE(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displayFirstSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displayFourthSegment(displayArray);
@@ -225,14 +302,19 @@ public class TwoSevenSegmentDisplayArraysFunction{
 		SevenSegmentDisplayArraysFunction.displaySixthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySeventhSegment(displayArray);
 
+		return displayArray;
+
 	}
 
-	public static void displayF(char[][] displayArray){
+	public static char[][] displayF(char[][] displayArray){
 
 		SevenSegmentDisplayArraysFunction.displayFirstSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displayFifthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySixthSegment(displayArray);
 		SevenSegmentDisplayArraysFunction.displaySeventhSegment(displayArray);
+
+		return displayArray;
+
 
 	}
 
