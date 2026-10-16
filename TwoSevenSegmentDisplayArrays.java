@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class TwoSevenSegmentDisplayArrays{
 
-	private static char[][] displayFirstArray = {
+	public static char[][] displayFirstArray = {
 		{' ',' ',' ',' '},
 		{' ',' ',' ',' '},
 		{' ',' ',' ',' '},
@@ -9,7 +9,7 @@ public class TwoSevenSegmentDisplayArrays{
 		{' ',' ',' ',' '},
 	};
 
-	private static char[][] displaySecondArray = {
+	public static char[][] displaySecondArray = {
 		{' ',' ',' ',' '},
 		{' ',' ',' ',' '},
 		{' ',' ',' ',' '},
@@ -33,11 +33,13 @@ public class TwoSevenSegmentDisplayArrays{
 
 		}*/
 
-		int decimal = TwoSevenSegmentDisplayArraysFunction.convertToDecimal(binaryNumber);
+		int firstDecimal = TwoSevenSegmentDisplayArraysFunction.convertFirstHalfToDecimal(binaryNumber);
+		int secondDecimal = TwoSevenSegmentDisplayArraysFunction.convertSecondHalfToDecimal(binaryNumber);
 
-		char singleDecimal = TwoSevenSegmentDisplayArraysFunction.convertToSingleHex(decimal);
+		char firstSingleDecimal = TwoSevenSegmentDisplayArraysFunction.convertToSingleHex(firstDecimal);
+		char secondSingleDecimal = TwoSevenSegmentDisplayArraysFunction.convertToSingleHex(secondDecimal);
 
-		TwoSevenSegmentDisplayArraysFunction.displaySingleHex(singleDecimal, displayFirstArray);
+		TwoSevenSegmentDisplayArraysFunction.displayHex(firstSingleDecimal, secondSingleDecimal, displayFirstArray, displaySecondArray);
 
 
 

@@ -27,7 +27,7 @@ public class TwoSevenSegmentDisplayArraysFunction{
 	}
 
 	
-	public static int convertToDecimal(String binaryNumber){
+	public static int convertFirstHalfToDecimal(String binaryNumber){
 		int binaryMultiplier = 8;
 		int sumOfDigits = 0;
 		for (int index = 0; index < 4; index++){
@@ -41,6 +41,19 @@ public class TwoSevenSegmentDisplayArraysFunction{
 
 	}
 
+	public static int convertSecondHalfToDecimal(String binaryNumber){
+		int binaryMultiplier = 8;
+		int sumOfDigits = 0;
+		for (int index = 4; index < 8; index++){
+			int digit = (int) binaryNumber.charAt(index) - (int) '0';
+			int multiplication = digit * binaryMultiplier;
+			binaryMultiplier /= 2;
+			sumOfDigits += multiplication;
+
+		}
+		return sumOfDigits;
+
+	}
 
 
 	public static char convertToSingleHex(int numberToConvert){
@@ -49,9 +62,9 @@ public class TwoSevenSegmentDisplayArraysFunction{
 		return hexMap[numberToConvert];
 	}
 
-	public static void displaySingleHex(char convertedNumber, char[][] displayArray){
-		if (convertedNumber == '1'){
-			displayHexadecimal(displayOne(displayArray), displayOne(displayArray));
+	public static void displayHex(char firstConvertedNumber, char secondConvertedNumber, char[][] displayFirstArray, char[][] displaySecondArray){
+		if (firstConvertedNumber == '1' && secondConvertedNumber == '1'){
+			displayHexadecimal(displayOne(displayFirstArray), displayOne(displaySecondArray));
 		}
 	}
 
