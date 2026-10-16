@@ -74,7 +74,7 @@ boolean repeat = true;
 			}
 			if (TicTacToeArrayFunctions.detectWinner('X') == false && TicTacToeArrayFunctions.detectWinner('O') == false){
 
-				System.out.println("You have tie!");
+				System.out.println("You have a tie!");
 
 			}
 			System.out.println("Would you like to play again? (yes/no)");

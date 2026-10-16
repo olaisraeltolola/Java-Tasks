@@ -1,145 +1,103 @@
 import java.util.Scanner;
 public class SevenSegmentDisplayArrays{
+
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 		boolean repeat = true;
 	
-while(repeat){
-boolean valid = true;
 
-String[][] displayArray = {
-{" "," "," "," "},
-{" "," "," "," "},
-{" "," "," "," "},
-{" "," "," "," "},
-{" "," "," "," "},
-};
+		while(repeat){
 
+			SevenSegmentDisplayArraysFunction.resetDisplay();
 
+			System.out.println("Enter an 8-bit binary number: ");
+			String binaryNumber = input.next();
 
-System.out.println("Enter an 8-bit binary number: ");
-String binaryNumber = input.next();
-
-int lengthOfByte = binaryNumber.length();
-
-if (lengthOfByte != 8){
-valid = false;
-
-} else {
-
-for (int index = 0; index <= 7; index++){
-
-if (binaryNumber.charAt(index) != '0' && binaryNumber.charAt(index) != '1'){
-valid = false;
-
-}
-}
-
-
-if (binaryNumber.charAt(7) == '0' && lengthOfByte == 8 && valid ){
-
-for (int arrayRow = 0; arrayRow < 5; arrayRow++){
-	for (int arrayColumn = 0; arrayColumn < 4; arrayColumn++){
-
-	System.out.print(displayArray[arrayRow][arrayColumn] + " ");
-
-
-}
-System.out.println();
-}
-}
-
-
-if (binaryNumber.charAt(0) == '1' && binaryNumber.charAt(7) != '0' && lengthOfByte == 8 && valid){
-
-for (int arrayIndex = 0; arrayIndex < 4; arrayIndex++){
-displayArray[0][arrayIndex] = "#";
-
-
-}
-
-}
+			if (SevenSegmentDisplayArraysFunction.isValid(binaryNumber) == true && SevenSegmentDisplayArraysFunction.isBinary(binaryNumber) == true){
 
 
 
-if (binaryNumber.charAt(1) == '1' && binaryNumber.charAt(7) != '0' && lengthOfByte == 8 && valid){
-
-for (int arrayIndex = 0; arrayIndex < 3; arrayIndex++){
-displayArray[arrayIndex][3] = "#";
-}
-
-}
+				if (SevenSegmentDisplayArraysFunction.isOn(binaryNumber) == false){
+					SevenSegmentDisplayArraysFunction.displayNumber();
 
 
+				} else {
 
-if (binaryNumber.charAt(2) == '1' && binaryNumber.charAt(7) != '0' && lengthOfByte == 8 && valid){
 
-for (int arrayIndex = 2; arrayIndex < 5; arrayIndex++){
-displayArray[arrayIndex][3] = "#";
-}
+					if (binaryNumber.charAt(0) == '1'){
 
-}
+						SevenSegmentDisplayArraysFunction.displayFirstSegment(displayArray);
+					}
 
 
 
-if (binaryNumber.charAt(3) == '1' && binaryNumber.charAt(7) != '0' && lengthOfByte == 8 && valid){
+					if (binaryNumber.charAt(1) == '1'){
 
-for (int arrayIndex = 0; arrayIndex < 4; arrayIndex++){
-displayArray[4][arrayIndex] = "#";
+						SevenSegmentDisplayArraysFunction.displaySecondSegment(displayArray);
 
-
-}
-
-}
+					}
 
 
 
-if (binaryNumber.charAt(4) == '1' && binaryNumber.charAt(7) != '0' && lengthOfByte == 8 && valid){
-for (int arrayIndex = 2; arrayIndex < 5; arrayIndex++){
-displayArray[arrayIndex][0] = "#";
-}
+					if (binaryNumber.charAt(2) == '1'){
 
-}
+						SevenSegmentDisplayArraysFunction.displayThirdSegment(displayArray);
 
+					}
 
 
-if (binaryNumber.charAt(5) == '1' && binaryNumber.charAt(7) != '0' && lengthOfByte == 8 && valid){
 
-for (int arrayIndex = 0; arrayIndex < 3; arrayIndex++){
-displayArray[arrayIndex][0] = "#";
-}
-}
+					if (binaryNumber.charAt(3) == '1'){
+
+						SevenSegmentDisplayArraysFunction.displayFourthSegment(displayArray);
 
 
-if (binaryNumber.charAt(6) == '1' && binaryNumber.charAt(7) != '0' && lengthOfByte == 8 && valid){
-
-for (int arrayIndex = 0; arrayIndex < 4; arrayIndex++){
-displayArray[2][arrayIndex] = "#";
+					}
 
 
-}
 
-}
-if (lengthOfByte == 8 && valid){
+					if (binaryNumber.charAt(4) == '1'){
 
-for (int arrayRow = 0; arrayRow < 5; arrayRow++){
-	for (int arrayColumn = 0; arrayColumn < 4; arrayColumn++){
+						SevenSegmentDisplayArraysFunction.displayFifthSegment(displayArray);
 
-System.out.print(displayArray[arrayRow][arrayColumn] + " ");
+					}
 
-}
-System.out.println();
-}
+
+
+					if (binaryNumber.charAt(5) == '1'){
+			
+						SevenSegmentDisplayArraysFunction.displaySixthSegment(displayArray);
+
+					}
+
+
+
+					if (binaryNumber.charAt(6) == '1'){
+
+						SevenSegmentDisplayArraysFunction.displaySeventhSegment(displayArray);
+
+					}
+
+
+					SevenSegmentDisplayArraysFunction.displayNumber();
+				}
+
+			} else {
+				System.out.println("Invalid input, please try again");
+
+
+
+
+			}
+
+			System.out.println("Do you want to enter another 8-bit binary number? (yes/no) ");
+			String response = input.next();
+
+			if (response.equalsIgnoreCase("no")){
+				repeat = false;
+			}
+
 		}
-
 	}
-
-if (valid == false)
-System.out.println("Invalid input, please try again");
-
-}
-
-
-}
 
 }
