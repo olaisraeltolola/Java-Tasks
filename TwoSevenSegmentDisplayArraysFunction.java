@@ -68,7 +68,7 @@ public class TwoSevenSegmentDisplayArraysFunction{
 
 
 		if (convertedNumber == '0'){
-			displayOne(displayArray);
+			displayZero(displayArray);
 
 		} else 	if (convertedNumber == '1'){
 			displayOne(displayArray);

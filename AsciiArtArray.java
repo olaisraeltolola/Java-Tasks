@@ -1,101 +1,102 @@
 import java.util.Scanner;
 public class AsciiArtArray{
+
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 
-char[][] artArray = {
-{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-{' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-};
+		boolean repeat = true;
+
+		String artMenu = """
+
+Please choose a picture to display:
+1. Heart
+2. House
+
+""";
 
 
-System.out.println("Enter a drawing character: ");
-char drawingCharacter = input.next().charAt(0);
+		while (repeat){
 
+			System.out.println(artMenu);
+			String artChoice = input.next();
 
-for (int arrayRowIndex = 2; arrayRowIndex <= 3; arrayRowIndex++){
+			if (AsciiArtArrayFunctions.isInputOneOrTwo(artChoice)){
+				switch(artChoice){
 
-	for (int arrayColumnIndex = 0; arrayColumnIndex <= 10; arrayColumnIndex++){
+					case "1" -> {displayHeartChoice();}
+					case "2" -> {displayHouseChoice();}
 
-		artArray[arrayRowIndex][arrayColumnIndex] = drawingCharacter;
+				}
 
-}
-}
+				repeat = false;	
+			
+			} else {
+				System.out.println("Please enter 1 or 2");
+			}
+		}
+	}
 
-	for (int arrayColumnIndex = 1; arrayColumnIndex <= 9; arrayColumnIndex++){
+	public static void displayHeartChoice(){
+		Scanner input = new Scanner(System.in);
 
-		artArray[4][arrayColumnIndex] = drawingCharacter;
+		boolean repeat = true;
 
-}
+		while(repeat){
+			System.out.println("Enter a drawing character: ");
+			String drawingCharacter = input.next();
 
+			System.out.println("Enter starting row: ");
+			int row = input.nextInt();
 
-	for (int arrayColumnIndex = 2; arrayColumnIndex <= 8; arrayColumnIndex++){
+			System.out.println("Enter a starting column: ");
+			int column = input.nextInt();
 
-		artArray[5][arrayColumnIndex] = drawingCharacter;
+	
 
-}
+			if (AsciiArtArrayFunctions.isInputSingleCharacter(drawingCharacter)){
+				AsciiArtArrayFunctions.printRowSpace(row);
 
+				AsciiArtArrayFunctions.displayHeart(drawingCharacter, column);
+				AsciiArtArrayFunctions.printRowSpace(row);
 
+				repeat = false;
 
-	for (int arrayColumnIndex = 3; arrayColumnIndex <= 7; arrayColumnIndex++){
+			} else {
+				System.out.println("Please enter a single character");
 
-		artArray[6][arrayColumnIndex] = drawingCharacter;
+			}
+		}
 
-}
+	}
 
+	public static void displayHouseChoice(){
+		Scanner input = new Scanner(System.in);
 
-	for (int arrayColumnIndex = 4; arrayColumnIndex <= 6; arrayColumnIndex++){
+		boolean repeat = true;
 
-		artArray[7][arrayColumnIndex] = drawingCharacter;
+		while(repeat){
+			System.out.println("Enter a drawing character: ");
+			String drawingCharacter = input.next();
 
-}
+			System.out.println("Enter starting row: ");
+			int row = input.nextInt();
 
+			System.out.println("Enter a starting column: ");
+			int column = input.nextInt();
 
-artArray[8][5] = drawingCharacter;
+			if (AsciiArtArrayFunctions.isInputSingleCharacter(drawingCharacter)){
+				AsciiArtArrayFunctions.printRowSpace(row);
 
+				AsciiArtArrayFunctions.displayHouse(drawingCharacter, column);
+				AsciiArtArrayFunctions.printRowSpace(row);
 
-	for (int arrayColumnIndex = 0; arrayColumnIndex <= 4; arrayColumnIndex++){
+				repeat = false;
 
-		artArray[1][arrayColumnIndex] = drawingCharacter;
+			} else {
+				System.out.println("Please enter a single character");
 
-}
+			}
+		}
+	}
 
-
-	for (int arrayColumnIndex = 6; arrayColumnIndex <= 10; arrayColumnIndex++){
-
-		artArray[1][arrayColumnIndex] = drawingCharacter;
-
-}
-
-	for (int arrayColumnIndex = 1; arrayColumnIndex <= 3; arrayColumnIndex++){
-
-		artArray[0][arrayColumnIndex] = drawingCharacter;
-
-}
-
-
-	for (int arrayColumnIndex = 7; arrayColumnIndex <= 9; arrayColumnIndex++){
-
-		artArray[0][arrayColumnIndex] = drawingCharacter;
-
-}
-
-
-for (int row = 0; row <= 8; row++){
-
-	for (int column = 0; column <= 10; column++){
-
-System.out.print(artArray[row][column]);
-
-}
-System.out.println();
-}
-}
 }
